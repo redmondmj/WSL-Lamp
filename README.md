@@ -1,6 +1,20 @@
 # WSL-Lamp
  NSCC Student Ubuntu LAMP Stack Installation for Windows Subsystem for Linux
 
+- [WSL-Lamp](#wsl-lamp)
+  * [Get WSL](#get-wsl)
+  * [Get Ubuntu Server](#get-ubuntu-server)
+  * [Installing LAMP](#installing-lamp)
+    + [Install Apache](#install-apache)
+    + [Install PHP](#install-php)
+    + [Install mysql or mariaDB](#install-mysql-or-mariadb)
+    + [Install phpmyadmin](#install-phpmyadmin)
+  * [Stopping the WSL](#stopping-the-wsl)
+  * [Start Over](#start-over)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Get WSL
 * start>Run>appwiz.cpl
 * turn Windows Features On...
