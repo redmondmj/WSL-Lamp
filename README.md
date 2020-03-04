@@ -6,6 +6,8 @@
 * turn Windows Features On...
 * select Windows Subsystem fpr Linux
 * ![Enable Feature](https://github.com/redmondmj/WSL-Lamp/blob/master/images/wsl-Install.PNG)
+* or via powershell `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+`
 
 ---
 
@@ -19,7 +21,11 @@
 
 ## Installing LAMP 
 * update apt package manager `sudo apt update`
-* install the full stack `sudo tasksel install lamp-server`
+* (optional)install updates `sudo apt upgrade`
+* (optional) install full stack:
+    * `sudo apt install tasksel`
+    * `sudo tasksel install lamp-server`
+
 ### Install Apache
 * install apache2 package `sudo apt install apache2`
 * note dependancies are automatically installed
@@ -35,9 +41,9 @@
 * install the package (mysql-server or mariadb-server) `sudo apt install mysql-server`
 * start the service `sudo service mysql start`
 * if mysql, then
-   * run the configureation script `sudo mysql_secure_installation`
-   * choose no for validation and set password for root
-   * choose no for all options except "Reload privilege tables now?"
+   * (optional)run the configureation script `sudo mysql_secure_installation`
+       * choose no for validation and set password for root
+       * choose no for all options except "Reload privilege tables now?"
    * run mysql client `sudo mysql`
    * enable native passwords `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';`
    * confirm native password enabled for root `SELECT user,authentication_string,plugin,host FROM mysql.user;`
@@ -54,3 +60,18 @@
 * start/restart apache `sudo apache2 start`
 * login via browser [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 
+---
+
+## Stopping the WSL 
+* WSL runs under the LxssManager service
+* it can be shut down via services
+* ![stop WSL](https://github.com/redmondmj/WSL-Lamp/blob/master/images/wsl-stopservice.PNG)
+* or via powershell `stop-service LxssManager`
+
+---
+
+## Start Over
+* you can reset your Ubuntu instance by resetting it
+* Apps & Features > Ubuntu 18.04?> Advanced Options
+* Select Reset
+* ![reset WSL](https://github.com/redmondmj/WSL-Lamp/blob/master/images/wsl-resetUbuntu.PNG)
